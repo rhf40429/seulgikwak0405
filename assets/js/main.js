@@ -142,6 +142,34 @@
     
   });
 
+  const longImageModal = document.getElementById('long-image-modal');
+if (longImageModal) {
+  const longImageScroll = longImageModal.querySelector('.long-image-scroll');
+  const longImage = longImageScroll.querySelector('img');
+  const closeLongImage = () => {
+    longImageModal.hidden = true;
+    document.body.classList.remove('long-image-open');
+    longImage.removeAttribute('src');
+  };
+  document.querySelectorAll('.long-image-link').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      longImage.src = link.href;
+      longImageModal.hidden = false;
+      document.body.classList.add('long-image-open');
+      longImageScroll.scrollTop = 0;
+      longImageScroll.focus();
+    });
+  });
+  longImageModal.querySelector('.long-image-close')
+    .addEventListener('click', closeLongImage);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !longImageModal.hidden) {
+      closeLongImage();
+    }
+  });
+}
+
   /**
    * Init isotope layout and filters
    */
