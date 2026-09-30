@@ -1,0 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+.arizonia-regular {
+  font-family: "Arizonia", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.portfolio .portfolio-item .portfolio-info .preview-link {
+  left: auto !important;
+  right: 25px !important;
+}

@@ -1,46 +1,33 @@
 
 /* Fonts */
-
-
-@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
-
-.coiny-regular-seul {
-  font-family: "Coiny", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Domine",  sans-serif;
-  --nav-font: "Quicksand",  sans-serif;
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color-doseul: #1c7cd1;
-  --heading-color: #3b434a; /* Color for headings, subheadings and title throughout the website */
-  --accent-color-doseul: #2146c1;
-  --accent-color: #ffbb27; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --default-color: #4e4e4e; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0a090f; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #0078ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color-kim: #1ff114; 
+  
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color-doseul: #ffffff;
-  --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color-doseul: #599ff0;
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color-doseul: #27a9ff;
-  --nav-hover-color: #ffbb27; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color-kim: #f80404;
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #2146c1; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #0078ff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -55,6 +42,15 @@
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
+.accent-background {
+  --background-color: #0078ff;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #ffffff;
+  --surface-color: #3393ff;
   --contrast-color: #ffffff;
 }
 
@@ -73,13 +69,13 @@ body {
 }
 
 a {
-  color: var(--accent-color-doseul);
+  color: var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color-doseul), transparent 25%);
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
 }
 
@@ -149,14 +145,14 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: #000000;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
   transition: all 0.5s;
-  z-index: 1000;
+  z-index: 997;
 }
 
 .header .logo {
@@ -164,66 +160,25 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
-  margin-right: 15px;
+  max-height: 32px;
+  margin-right: 8px;
 }
 
 .header .logo h1 {
   font-size: 30px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color-doseul);
-}
-
-.header .header-social-links {
-  padding-right: 15px;
-}
-
-.header .header-social-links a {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  padding-left: 6px;
-  display: inline-block;
-  transition: 0.3s;
-  font-size: 16px;
-}
-
-.header .header-social-links a:hover {
-  color: var(--accent-color-doseul);
-}
-
-.header .header-social-links a i {
-  line-height: 0px;
-}
-
-@media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
-  }
-
-  .header .header-social-links {
-    order: 2;
-  }
-
-  .header .navmenu {
-    order: 3;
-  }
+  color: var(--heading-color);
 }
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-  padding: 12px 0;
-}
-
-/* Global Header on Scroll
-------------------------------*/
-.scrolled .header {
-  --background-color: rgba(0, 0, 0, 0.8);
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Navmenu - Desktop */
+/* Desktop Navigation */
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
@@ -241,19 +196,28 @@ h6 {
     position: relative;
   }
 
+  .navmenu>ul>li {
+    white-space: nowrap;
+    padding: 15px 14px;
+  }
+
+  .navmenu>ul>li:last-child {
+    padding-right: 0;
+  }
+
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 18px;
-    text-transform: uppercase;
-    /* font-family: var(--nav-font); */
+    font-size: 15px;
+    padding: 0 2px;
+    font-family: var(--nav-font);
     font-weight: 400;
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    position: relative;
   }
 
   .navmenu a i,
@@ -264,14 +228,30 @@ h6 {
     transition: 0.3s;
   }
 
-  .navmenu li:last-child a {
-    padding-right: 0;
+  .navmenu>ul>li>a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--nav-hover-color);
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .navmenu a:hover:before,
+  .navmenu li:hover>a:before,
+  .navmenu .active:before {
+    visibility: visible;
+    width: 100%;
   }
 
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color-doseul);
+    color: var(--nav-hover-color);
   }
 
   .navmenu .dropdown ul {
@@ -331,10 +311,10 @@ h6 {
   }
 }
 
-/* Navmenu - Mobile */
+/* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color-doseul);
+    color: var(--nav-color-kim);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -356,10 +336,11 @@ h6 {
     margin: 0;
     border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
   .navmenu a,
@@ -388,12 +369,12 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color-doseul), transparent 90%);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
   .navmenu a i:hover,
   .navmenu a:focus i:hover {
-    background-color: var(--accent-color-doseul);
+    background-color: var(--accent-color);
     color: var(--contrast-color);
   }
 
@@ -405,7 +386,7 @@ h6 {
 
   .navmenu .active i,
   .navmenu .active:focus i {
-    background-color: var(--accent-color-doseul);
+    background-color: var(--accent-color);
     color: var(--contrast-color);
     transform: rotate(180deg);
   }
@@ -417,8 +398,6 @@ h6 {
     padding: 10px 0;
     margin: 10px 20px;
     background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
     transition: all 0.5s ease-in-out;
   }
 
@@ -465,59 +444,45 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
+  padding: 40px 0;
   position: relative;
 }
 
-.footer h3 {
-  font-size: 36px;
-  font-weight: 700;
-  position: relative;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-.footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 30px 0;
+.footer .copyright p {
+  margin-bottom: 0;
 }
 
 .footer .social-links {
-  margin: 0 0 30px 0;
+  margin-top: 20px;
 }
 
 .footer .social-links a {
-  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  line-height: 1;
-  margin: 0 4px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin: 0 5px;
   transition: 0.3s;
 }
 
 .footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  text-decoration: none;
-}
-
-.footer .copyright {
-  padding-top: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color);
+  border-color: var(--default-color);
 }
 
 .footer .credits {
+  margin-top: 10px;
   font-size: 13px;
-  padding-top: 5px;
+  text-align: center;
+}
+
+.footer .credits a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 /*--------------------------------------------------------------
@@ -538,7 +503,7 @@ h6 {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #ffffff;
-  border-color: var(--accent-color-doseul) transparent var(--accent-color-doseul) transparent;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -565,10 +530,10 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color-doseul);
+  background-color: var(--accent-color-kim);
   width: 44px;
   height: 44px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   transition: all 0.4s;
 }
 
@@ -579,7 +544,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color-doseul), transparent 20%);
+  background-color: color-mix(in srgb, var(--accent-color-kim), transparent 50%);
   color: var(--contrast-color);
 }
 
@@ -602,30 +567,25 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
+  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
   color: var(--default-color);
   background-color: var(--background-color);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 160px 0 80px 0;
-  text-align: center;
+  padding: 25px 0;
   position: relative;
 }
 
 .page-title h1 {
-  font-size: 42px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .page-title .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -637,7 +597,7 @@ h6 {
   content: "/";
   display: inline-block;
   padding-right: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
 /*--------------------------------------------------------------
@@ -648,7 +608,7 @@ section,
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 60px 0;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 92px;
   overflow: clip;
 }
 
@@ -656,7 +616,7 @@ section,
 
   section,
   .section {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 76px;
   }
 }
 
@@ -665,49 +625,33 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding: 30px 0;
-  margin-bottom: 30px;
+  padding-bottom: 60px;
   position: relative;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
-  text-transform: uppercase;
   margin-bottom: 20px;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   position: relative;
-  z-index: 2;
 }
 
-.section-title span {
+.section-title h2:after {
+  content: "";
   position: absolute;
-  top: 4px;
-  color: color-mix(in srgb, var(--heading-color-doseul), transparent 95%);
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color-kim);
   left: 0;
   right: 0;
-  z-index: 1;
-  font-weight: 700;
-  font-size: 50px;
-  text-transform: uppercase;
-  line-height: 1;
+  bottom: 0;
+  margin: auto;
 }
 
 .section-title p {
   margin-bottom: 0;
-  position: relative;
-  z-index: 2;
-}
-
-@media (max-width: 575px) {
-  .section-title h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
-
-  .section-title span {
-    font-size: 38px;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -715,21 +659,12 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 92px);
   position: relative;
-  padding: 120px 0 60px 0;
+  padding: 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: contain;
-}
-
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
 }
 
 .hero img {
@@ -742,6 +677,14 @@ section,
   z-index: 1;
 }
 
+.hero:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
 .hero .container {
   position: relative;
   z-index: 3;
@@ -749,87 +692,110 @@ section,
 
 .hero h2 {
   margin: 0;
-  font-size: 50px;
-  font-weight: 800;
-  line-height: 56px;
+  font-size: 64px;
+  font-weight: 700;
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 20px 0 0 0;
-  font-size: 16px;
-  font-weight: 500;
+  margin: 5px 0 0 0;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.hero p span {
   letter-spacing: 1px;
 }
 
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 30px;
-    line-height: 36px;
-  }
-}
-
-.hero .btn-scroll {
-  transition: 0.4s;
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  display: block;
-  margin-top: 30px;
-  animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
-}
-
-.hero .btn-scroll i {
-  font-size: 48px;
-}
-
-.hero .btn-scroll:hover {
-  color: var(--accent-color-doseul);
-}
-
-@keyframes btn-up-down {
-  0% {
-    transform: translateY(5px);
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
   }
 
-  100% {
-    transform: translateY(-5px);
+  .hero p {
+    font-size: 20px;
   }
 }
 
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .content h2 {
+.about .skills-content h5 {
+  font-size: 22px;
   font-weight: 700;
-  font-size: 24px;
+  margin: 30px 0 28px 0;
+  color: #111;
+  text-transform: uppercase;
 }
 
-.about .content ul {
-  list-style: none;
+/* 각 스킬 영역 */
+.about .progress {
+  height: auto;
+  display: block;
+  background: none;
+  border-radius: 0;
+  margin: 0 0 26px 0;
+  overflow: visible;
+}
+
+/* 스킬명 + 퍼센트 */
+.about .progress .skill {
+  color: #666;
   padding: 0;
-}
+  margin: 0 0 10px 0;
 
-.about .content ul li {
-  margin-bottom: 26px;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
+
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--default-font);
 }
 
-.about .content ul strong {
-  margin-right: 10px;
+/* 퍼센트 */
+.about .progress .skill .val {
+  float: none;
+  font-style: normal;
+  margin-left: 5px;
+  color: #666;
 }
 
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: var(--accent-color-doseul);
-  line-height: 0;
+/* 바깥쪽 흰색 트랙 */
+.about .progress-bar-wrap {
+  width: 100%;
+  height: 18px;
+
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 20px;
+
+  padding: 4px;
+
+  box-shadow: 0 8px 24px rgba(99, 117, 255, 0.14);
+}
+
+/* 실제 진행 바 */
+.about .progress-bar {
+  width: 1px;
+  height: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #818cff 0%,
+    #63bdf7 100%
+  );
+
+  border-radius: 20px;
+
+  transition: width 0.9s ease;
 }
 
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
 .resume .resume-title {
-  color: var(--heading-color-doseul);
+  color: var(--heading-color);
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
@@ -839,7 +805,7 @@ section,
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid var(--accent-color-doseul);
+  border-left: 2px solid var(--accent-color);
   position: relative;
 }
 
@@ -854,6 +820,7 @@ section,
 
 .resume .resume-item h5 {
   font-size: 16px;
+  color: red;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -876,12 +843,12 @@ section,
   content: "";
   position: absolute;
   width: 16px;
-  height: 14  6px;
+  height: 16px;
   border-radius: 50px;
   left: -9px;
   top: 0;
   background: var(--background-color);
-  border: 2px solid var(--accent-color-doseul);
+  border: 2px solid var(--accent-color-kim);
 }
 
 /*--------------------------------------------------------------
@@ -889,41 +856,33 @@ section,
 --------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-  padding: 50px 30px;
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  padding: 60px 30px;
+  transition: all ease-in-out 0.3s;
+  border-radius: 18px;
+  border-bottom: 5px solid var(--surface-color);
   height: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.services .service-item:before {
-  content: "";
-  position: absolute;
-  background: var(--accent-color-doseul);
-  inset: 100% 0 0 0;
-  transition: all 0.3s;
-  z-index: -1;
 }
 
 .services .service-item .icon {
-  margin-bottom: 10px;
-}
-
-.services .service-item .icon i {
-  color: var(--accent-color-doseul);
-  font-size: 36px;
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  margin: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 28px;
   transition: ease-in-out 0.3s;
 }
 
-.services .service-item h4 {
+.services .service-item h3 {
   font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.services .service-item h4 a {
-  color: var(--heading-color);
+  margin: 10px 0 15px 0;
+  font-size: 22px;
   transition: ease-in-out 0.3s;
 }
 
@@ -931,19 +890,278 @@ section,
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
-  transition: ease-in-out 0.3s;
 }
 
-.services .service-item:hover h4 a,
-.services .service-item:hover .icon i,
-.services .service-item:hover p {
-  color: var(--contrast-color);
+@media (min-width: 1365px) {
+  .services .service-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+  }
+
+  .services .service-item:hover h3 {
+    color: var(--accent-color);
+  }
 }
 
-.services .service-item:hover:before {
-  background: var(--accent-color-doseul);
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats {
+  position: relative;
+  padding: 120px 0;
+}
+
+.stats img {
+  position: absolute;
   inset: 0;
-  border-radius: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.stats:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 40%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.stats .container {
+  position: relative;
+  z-index: 3;
+}
+
+.stats .stats-item {
+  padding: 30px;
+  width: 100%;
+}
+
+.stats .stats-item span {
+  font-size: 48px;
+  display: block;
+  color: var(--default-color);
+  font-weight: 700;
+}
+
+.stats .stats-item p {
+  padding: 0;
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+.portfolio .portfolio-item {
+  position: relative;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  background: color-mix(in srgb, var(--background-color), transparent 10%);
+  padding: 15px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 14px);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: 14px;
+  font-size: 28px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing .pricing-item {
+  border-bottom: 1px dashed color-mix(in srgb, var(--default-color), transparent 60%);
+  width: 100%;
+  height: 100%;
+  padding: 0 0 15px 0;
+}
+
+.pricing .pricing-item h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.pricing .pricing-item h4 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+}
+
+.faq .content p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.faq .faq-container .faq-item {
+  background-color: var(--surface-color);
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 30px 0 0;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+}
+
+.faq .faq-container .faq-item h3 .num {
+  color: var(--accent-color);
+  padding-right: 5px;
+}
+
+.faq .faq-container .faq-item h3:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-item .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq .faq-container .faq-item .faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-toggle:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active h3 {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -1068,263 +1286,33 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Portfolio Section
---------------------------------------------------------------*/
-.portfolio .portfolio-filters {
-  padding: 0;
-  margin: 0 auto 20px auto;
-  list-style: none;
-  text-align: center;
-}
-
-.portfolio .portfolio-filters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0;
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0 10px;
-  line-height: 1;
-  margin-bottom: 20px;
-  transition: all 0.3s ease-in-out;
-}
-
-.portfolio .portfolio-filters li:hover,
-.portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color-doseul);
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 5px;
-  }
-}
-
-.portfolio .portfolio-item {
-  position: relative;
-}
-
-.portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 0;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
-  font-weight: 600;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 14px;
-  margin-bottom: 0;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 15px;
-  font-size: 24px;
-  top: calc(50% - 14px);
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: 0.3s;
-  line-height: 0;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color-doseul);
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 14px;
-  font-size: 28px;
-}
-
-.portfolio .portfolio-item:hover .portfolio-info {
-  opacity: 1;
-  bottom: 20px;
-}
-
-
-/*--------------------------------------------------------------
-# Pricing Section
---------------------------------------------------------------*/
-.pricing .pricing-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px rgba(0, 0, 0, 0.1);
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing .pricing-item h3 {
-  padding: 15px;
-  margin-top: 15px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.pricing .pricing-item h4 {
-  color: var(--accent-color);
-  font-size: 42px;
-  font-family: var(--default-font);
-  font-weight: 500;
-}
-
-.pricing .pricing-item h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-
-.pricing .pricing-item h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.pricing .pricing-item ul {
-  padding: 20px 0;
-  list-style: none;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-
-.pricing .pricing-item ul li {
-  padding-bottom: 16px;
-}
-
-.pricing .pricing-item ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  text-decoration: line-through;
-}
-
-.pricing .pricing-item .btn-wrap {
-  padding: 15px;
-  text-align: center;
-}
-
-.pricing .pricing-item .btn-buy {
-  color: var(--accent-color);
-  background-color: transparent;
-  border: 2px solid var(--accent-color);
-  display: inline-block;
-  padding: 10px 40px 12px 40px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-family: var(--heading-font);
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.pricing .pricing-item .btn-buy:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing .recommended .btn-buy {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing .recommended .btn-buy:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.pricing .recommended-badge {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  font-size: 13px;
-  padding: 3px 25px 6px 25px;
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  color: var(--accent-color);
-  border-radius: 50px;
-}
-
-/*--------------------------------------------------------------
-# Pricing 2 Section
---------------------------------------------------------------*/
-.pricing-2 .pricing-item {
-  border-bottom: 1px dashed color-mix(in srgb, var(--default-color), transparent 60%);
-  width: 100%;
-  height: 100%;
-  padding: 0 0 15px 0;
-}
-
-.pricing-2 .pricing-item h3 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.pricing-2 .pricing-item h4 {
-  margin: 0;
-  font-size: 18px;
-  color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Gallery Section
---------------------------------------------------------------*/
-.gallery .gallery-item {
-  overflow: hidden;
-  border-right: 3px solid var(--background-color);
-  border-bottom: 3px solid var(--background-color);
-}
-
-.gallery .gallery-item img {
-  transition: all ease-in-out 0.4s;
-}
-
-.gallery .gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-/*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+.contact .info-wrap {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
 .contact .info-item i {
   font-size: 20px;
   color: var(--accent-color);
-  font-size: 36px;
+  width: 56px;
+  height: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
   transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 40%);
+  margin-right: 15px;
 }
 
 .contact .info-item h3 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
-  margin: 20px 0;
+  margin: 0 0 2px 0;
 }
 
 .contact .info-item p {
@@ -1333,17 +1321,15 @@ section,
   font-size: 14px;
 }
 
-@media (min-width: 992px) {
-  .contact .info-item.info-item-borders {
-    border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  }
+.contact .info-item:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .contact .php-email-form {
+  background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  margin-top: 30px;
 }
 
 @media (max-width: 575px) {
@@ -1367,7 +1353,7 @@ section,
 .contact .php-email-form input[type=text]:focus,
 .contact .php-email-form input[type=email]:focus,
 .contact .php-email-form textarea:focus {
-  border-color: var(--accent-color-doseul);
+  border-color: var(--accent-color);
 }
 
 .contact .php-email-form input[type=text]::placeholder,
@@ -1377,8 +1363,8 @@ section,
 }
 
 .contact .php-email-form button[type=submit] {
-  color: var(--contrast-color-doseul);
-  background: var(--accent-color-doseul);
+  color: var(--contrast-color);
+  background: var(--accent-color);
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
@@ -1386,13 +1372,13 @@ section,
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color-doseul), transparent 20%);
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 
 .contact .php-email-form button[type=reset] {
-  color: var(--contrast-color-doseul);
-  background: var(--accent-color-doseul);
+  color: var(--contrast-color);
+  background: var(--accent-color);
   border: 0;
   padding: 10px 30px;
   transition: 0.4s;
@@ -1400,7 +1386,7 @@ section,
 }
 
 .contact .php-email-form button[type=reset]:hover {
-  background: color-mix(in srgb, var(--accent-color-doseul), transparent 20%);
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 /*--------------------------------------------------------------
@@ -1410,26 +1396,57 @@ section,
   width: 100%;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+.portfolio-details .swiper-wrapper {
+  height: auto;
+}
+
+.portfolio-details .swiper-button-prev,
+.portfolio-details .swiper-button-next {
+  width: 48px;
+  height: 48px;
+}
+
+.portfolio-details .swiper-button-prev:after,
+.portfolio-details .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.portfolio-details .swiper-button-prev:hover:after,
+.portfolio-details .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 575px) {
+
+  .portfolio-details .swiper-button-prev,
+  .portfolio-details .swiper-button-next {
+    display: none;
+  }
+}
+
+.portfolio-details .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
+.portfolio-details .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
   background-color: color-mix(in srgb, var(--default-color), transparent 85%);
   opacity: 1;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
-}
-
-.portfolio-details .portfolio-info {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -1437,7 +1454,18 @@ section,
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  position: relative;
+}
+
+.portfolio-details .portfolio-info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: 0;
 }
 
 .portfolio-details .portfolio-info ul {
@@ -1446,12 +1474,29 @@ section,
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
+.portfolio-details .portfolio-info ul li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
 }
 
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
+.portfolio-details .portfolio-info ul strong {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 14px;
+}
+
+.portfolio-details .portfolio-info .btn-visit {
+  padding: 8px 40px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-info .btn-visit:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 .portfolio-details .portfolio-description h2 {
@@ -1462,7 +1507,61 @@ section,
 
 .portfolio-details .portfolio-description p {
   padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.portfolio-details .portfolio-description .testimonial-item {
+  padding: 30px 30px 0 30px;
+  position: relative;
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  margin-bottom: 50px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  border: 6px solid var(--background-color);
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  padding-top: 20px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.portfolio-details .portfolio-description .testimonial-item p {
+  font-style: italic;
+  margin: 0 0 15px 0 0 0;
+  padding: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1537,50 +1636,10 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-.long-image-modal[hidden] {
-display: none;
-}
-.long-image-modal {
-position: fixed;
-inset: 0;
-z-index: 1000000;
-background: rgba(0, 0, 0, .94);
-}
-.long-image-scroll {
-width: 100%;
-height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
-}
-.long-image-scroll img {
-  display: block;
-   width: min(calc(100% - 32px), 860px);
-  max-width: 100%;
-  height: auto;
-  margin: 48px auto 32px;
-}
-.long-image-close {
-  position: fixed;
-  top: max(12px, env(safe-area-inset-top));
-  right: 16px;
-  z-index: 2;
-  width: 44px;
-  height: 44px;
-  border: 0;
-  border-radius: 50%;
-  color: #fff;
-  background: rgba(30, 30, 30, .85);
-  font-size: 32px;
-  line-height: 1;
-}
-body.long-image-open {
-  overflow: hidden;
-}
 
-/* .glightbox-container .gslide-media {
+
+
+.glightbox-container .gslide-media {
   max-height: none !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
@@ -1595,7 +1654,7 @@ body.long-image-open {
   width: auto !important;
   height: auto !important;
 
-  max-width: 65vw !important;
+  max-width: 90vw !important;
   max-height: none !important;
 
   object-fit: contain !important;
@@ -1619,26 +1678,12 @@ body.long-image-open {
 /* 아래 흰색 설명 영역 제거 */
 .glightbox-container .gslide-description {
   display: none !important;
-} */
+}
 
 /* 썸네일 기본 상태 */
 .portfolio .portfolio-item > img {
   transition: filter 0.35s ease;
-  object-fit: cover;
-  border-radius: 20px;
 }
-
-/* .portfolio .portfolio-item > img {
-  display: block;
-  width: 100%;
-  border-radius: 30px !important;
-  transition: filter 0.35s ease, transform 0.35s ease;
-}
-
-.portfolio .portfolio-item:hover > img {
-  filter: brightness(70%);
-  transform: scale(1.04);
-} */
 
 /* 마우스를 올렸을 때 이미지 어둡게 */
 .portfolio .portfolio-item:hover > img {
@@ -1648,7 +1693,6 @@ body.long-image-open {
 
 /* 이미지 확대 */
 .portfolio .portfolio-item {
-  border-radius: 20px;
   overflow: hidden;
 }
 
